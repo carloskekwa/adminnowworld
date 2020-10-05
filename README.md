@@ -1,5 +1,3 @@
-# angular-material7-firebase-crud-app
-Create cart inventory CRUD web app with Angular 7 framework using Angular Material 7, Firebase (AngularFire2) real-time NoSQL database.
 
 A cart inventory CRUD web app in this app a user can do the following things.
 - Add a cart
@@ -7,7 +5,6 @@ A cart inventory CRUD web app in this app a user can do the following things.
 - Edit a cart
 - Delete a cart
 
-Step by step article on [Create Angular 7 Firebase 6 CRUD Web App with Angular Material 7](https://www.positronx.io/create-angular-7-firebase-crud-app-with-angular-material-7/)
 
 ## How to run the app?
 - Run `npm install` to install required dependencies.
@@ -18,6 +15,4 @@ Step by step article on [Create Angular 7 Firebase 6 CRUD Web App with Angular M
 - Angular 7.2.3
 - Firebase 6.0.2
 - Angular Material 7.3.7
-
-[Visit positronX.io to learn more about full stack software development](https://www.positronx.io/)
 
