@@ -1,0 +1,31 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="header">
+  <div>Cart</div>
+  <span class="nav-tool-items">
+    <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+    [fixedTopGap]>
+    <mat-nav-list>
+ 
+      <a mat-list-item routerLinkActive="active" routerLink="/carts-list">
+        <mat-icon>format_list_bulleted</mat-icon> View Cart
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/add-item">
+        <mat-icon>add</mat-icon> Add Item
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/items-list">
+        <mat-icon>format_list_bulleted</mat-icon> View Item
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,66 @@
+<!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Edit cart</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+
+<!-- cart form -->
+<div class="inner-wrapper">
+  <form [formGroup]="editcartForm" (ngSubmit)="updateCart()" novalidate>
+    <mat-card>
+      <div class="controlers-wrapper">
+        <!-- cart name -->
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="id" formControlName="id">
+          <mat-error *ngIf="handleError('id', 'required')">
+            You must provide a<strong>id</strong>
+          </mat-error>
+        </mat-form-field>
+
+  
+
+        <!-- Total -->
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Total" formControlName="Total" pattern="[0-9]*" minlength="1"
+            maxlength="9">
+          <mat-error *ngIf="handleError('Total', 'required')">
+            You must provide a <strong>min 1 digit Total</strong>
+          </mat-error>
+          <mat-error *ngIf="handleError('Total', 'pattern')">
+            Only numbers are allowed
+          </mat-error>
+          <mat-error *ngIf="handleError('Total', 'minlength')">
+            Your <strong>Total</strong> must be 1 digit
+          </mat-error>
+        </mat-form-field>
+
+
+        
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="userID" formControlName="userID">
+          <mat-error *ngIf="handleError('userID', 'required')">
+            You must provide a<strong>userID</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="List items" formControlName="items">
+          <p style="text-align: left;"  class="no-data"> &nbsp;{{getItems()}}</p>
+
+        </mat-form-field>
+
+      </div>
+    </mat-card>
+    <!-- Submit & Reset -->
+    <mat-card>
+      <div class="full-wrapper button-wrapper">
+        <div class="button-wrapper">
+          <button mat-flat-button color="warn">Update</button>
+          <button mat-flat-button color="war" type="button" (click)="goBack()">Go Back</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>

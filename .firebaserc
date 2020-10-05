@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "whatnowtravel-51718"
+  },
+  "targets": {
+    "whatnowtravel-51718": {
+      "hosting": {
+        "front": [
+          "whatnowtravel-51718"
+        ],
+        "english": [
+          "myproject"
+        ],
+        "admin-whatnowtravel": [
+          "admin-whatnowtravel"
+        ]
+      }
+    }
+  }
+}

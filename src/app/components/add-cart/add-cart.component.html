@@ -1,0 +1,72 @@
+ <!-- Title group  -->
+ <div class="title-group">
+   <h1 class="mat-h1">Add Cart</h1>
+   <mat-divider fxFlex="1 0"></mat-divider>
+ </div>
+
+ <!-- cart form -->
+ <div class="inner-wrapper">
+   <form [formGroup]="cartForm" (ngSubmit)="submitcart()" #resetcartForm="ngForm" novalidate>
+     <!-- Left block -->
+     <mat-card>
+       <div class="controlers-wrapper">
+         <!-- cart name -->
+
+         <!-- Total -->
+         <mat-form-field class="example-full-width">
+           <input matInput placeholder="Total" formControlName="Total" pattern="[0-9]*" minlength="1"
+             maxlength="9">
+           <mat-error *ngIf="handleError('Total', 'required')">
+             You must provide a <strong>1 digit total</strong>
+           </mat-error>
+           <mat-error *ngIf="handleError('Total', 'pattern')">
+             Only numbers are allowed
+           </mat-error>
+           <mat-error *ngIf="handleError('Total', 'minlength')">
+             Your <strong>Total</strong> must be 10 digit
+           </mat-error>
+         </mat-form-field>
+
+
+  
+       </div>
+     </mat-card>
+
+     <!-- Right block -->
+     <mat-card>
+       <div class="controlers-wrapper">
+         cart binding
+         <!-- <mat-form-field>
+           <mat-label>Binding type</mat-label>
+           <mat-select [(value)]="selected" formControlName="userID">
+             <mat-option [value]="bindingType" *ngFor="let bindingType of userID">{{bindingType}}</mat-option>
+           </mat-select>
+           <mat-error *ngIf="handleError('binding_type', 'required')">
+             Binding type is required
+           </mat-error>
+         </mat-form-field> -->
+
+         <!-- cart stock -->
+         <!-- <div class="misc-bottom-padding">
+           <mat-label>Available in stock: </mat-label>
+           <mat-radio-group aria-label="Select an option" formControlName="in_stock">
+             <mat-radio-button value="Yes">Yes</mat-radio-button>
+             <mat-radio-button value="No">No</mat-radio-button>
+           </mat-radio-group>
+         </div> -->
+
+         <!-- Add languages -->
+       </div>
+     </mat-card>
+
+     <!-- Submit & Reset -->
+     <mat-card>
+       <div class="full-wrapper button-wrapper">
+         <div class="button-wrapper">
+           <button mat-flat-button color="warn">Submit</button>
+           <button mat-flat-button color="war" (click)="resetForm()">Clear</button>
+         </div>
+       </div>
+     </mat-card>
+   </form>
+ </div>
